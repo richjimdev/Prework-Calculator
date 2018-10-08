@@ -6,8 +6,10 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
+            //Putting code in loop to allow the use of multiple calculator methods
             while(1 > 0)
             {
+                //Guiding user on how to use this calculator app
                 Console.WriteLine("What calculator function would you like to perform?");
                 Console.WriteLine(@"1. Add");
                 Console.WriteLine("2. Subtract");
@@ -15,42 +17,33 @@ namespace Calculator
                 Console.WriteLine("4. Divide");
                 Console.WriteLine("Type 'quit' to exit.");
 
+                //Saving user selection into a variable
                 string selection = Console.ReadLine();
 
-                if (selection == "quit")
-                {
+                if (selection == "quit") //If user wants to quit, this breaks the loop
                     break;
-                }
 
+                //saving two user submitted numbers to calculate the result
                 Console.WriteLine("Input two numbers to calculate your final result:");
                 Console.Write("First number: ");
                 int firstNum = Int32.Parse(Console.ReadLine());
                 Console.Write("Second number: ");
                 int secondNum = Int32.Parse(Console.ReadLine());
 
+                //calculating result based on selected method and number inputs
+                int result = 0;
                 Console.Write("Your result is: ");
 
                 if (selection == "1")
-                {
-                    int result = Adder(firstNum, secondNum);
-                    Console.WriteLine(result);
-                }
+                    result = Adder(firstNum, secondNum);
                 if (selection == "2")
-                {
-                    int result = Subtract(firstNum, secondNum);
-                    Console.WriteLine(result);
-                }
+                    result = Subtract(firstNum, secondNum);
                 if (selection == "3")
-                {
-                    int result = Multiply(firstNum, secondNum);
-                    Console.WriteLine(result);
-                }
+                    result = Multiply(firstNum, secondNum);
                 if (selection == "4")
-                {
-                    int result = Divide(firstNum, secondNum);
-                    Console.WriteLine(result);
-                }
+                    result = Divide(firstNum, secondNum);
 
+                Console.WriteLine(result); //finally, display result
             }
         }
 
@@ -80,3 +73,4 @@ namespace Calculator
 
     }
 }
+

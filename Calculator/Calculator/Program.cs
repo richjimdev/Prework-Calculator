@@ -6,27 +6,52 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("What calculator function would you like to perform?");
-            Console.WriteLine("1. Add");
-            Console.WriteLine("2. Subtract");
-            Console.WriteLine("3. Multiply");
-            Console.WriteLine("4. Divide");
-
-            string selection = Console.ReadLine();
-
-            Console.WriteLine("Input two numbers to calculate your final result:");
-            int firstNum = Int32.Parse(Console.ReadLine());
-            int secondNum = Int32.Parse(Console.ReadLine());
-
-            if (selection == "1")
+            while(1 > 0)
             {
-                int result = Adder(firstNum, secondNum);
-                Console.WriteLine(result);
+                Console.WriteLine("What calculator function would you like to perform?");
+                Console.WriteLine(@"1. Add");
+                Console.WriteLine("2. Subtract");
+                Console.WriteLine("3. Multiply");
+                Console.WriteLine("4. Divide");
+                Console.WriteLine("Type 'quit' to exit.");
+
+                string selection = Console.ReadLine();
+
+                if (selection == "quit")
+                {
+                    break;
+                }
+
+                Console.WriteLine("Input two numbers to calculate your final result:");
+                Console.Write("First number: ");
+                int firstNum = Int32.Parse(Console.ReadLine());
+                Console.Write("Second number: ");
+                int secondNum = Int32.Parse(Console.ReadLine());
+
+                Console.Write("Your result is: ");
+
+                if (selection == "1")
+                {
+                    int result = Adder(firstNum, secondNum);
+                    Console.WriteLine(result);
+                }
+                if (selection == "2")
+                {
+                    int result = Subtract(firstNum, secondNum);
+                    Console.WriteLine(result);
+                }
+                if (selection == "3")
+                {
+                    int result = Multiply(firstNum, secondNum);
+                    Console.WriteLine(result);
+                }
+                if (selection == "4")
+                {
+                    int result = Divide(firstNum, secondNum);
+                    Console.WriteLine(result);
+                }
+
             }
-
-
-
-            Console.ReadLine();
         }
 
         //Method to add numbers
